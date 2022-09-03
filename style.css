@@ -1,0 +1,386 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    --red: red;
+    --black: black;
+    --white: white;
+    --brownish: wheat;
+    --offwhite: #F8F5EB;
+}
+html, body{
+    overflow-x: hidden;
+    transition: background 1s ease-in-out;
+}
+a{
+    text-decoration: none;
+}
+
+section{
+    min-height: 100vh;
+}
+.hero{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+.name{
+    font-family: 'Patron - Personal Use', sans-serif;
+    font-size: clamp(2rem, 10vw, 8rem);
+}
+.title{
+    font-family: 'EngraversGothic BT', sans-serif;
+    font-size: clamp(.5rem, 3vw, 2rem);
+}
+.about-title,
+.work-title,
+.services-title,
+.contact-main{
+    font-family: 'Patron - Personal Use', sans-serif;
+    font-size: clamp(2rem, 10vw, 6rem);
+    text-align: center;
+}
+.about-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.about-img{
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    background: url(./images/me.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.about-desc{
+    text-align: center;
+    padding: 20px;
+}
+.main-desc{
+    font-family: 'EngraversGothic BT', sans-serif;
+    font-size: clamp(1.5rem, 2vw, 2rem);
+}
+.secondary,
+.tertiary{
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(1rem, 2vw, 1.5rem);
+    margin: 20px 0;
+}
+@media screen and (min-width: 800px) {
+    html{
+        cursor: none;
+    }
+    .about-container{
+        flex-direction: row;
+    }
+    .about-desc{
+        text-align: right;
+        flex: 1;
+    }
+    .about-img{
+        width: 600px;
+        height: 600px;
+    }
+    .cursor-dot,
+.cursor-dot-outline {
+    pointer-events: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s ease-in-out,
+                transform 0.3s ease-in-out;
+    z-index: 2;
+    mix-blend-mode: difference;
+}
+
+.cursor-dot {
+    size: 10px;
+    width: 10px;
+    height: 10px;
+    background-color: var(--red);
+}
+
+.cursor-dot-outline {
+    size: 50px;
+    width: 50px;
+    height: 50px;
+    background-color: var(--offwhite);
+    opacity: 50%;
+}
+}
+.graphic{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.graphic img{
+    width:100%;
+    overflow: hidden;
+    margin-left: -100px;
+}
+@media screen and (min-width: 768px) {
+    .graphic img{
+        width: 70vw;
+    }
+}
+.services-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.services-title{
+    color: var(--black);
+}
+.service{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--white);
+    border-radius: 5px;
+    width: 80vw;
+    height: 80vh;
+    margin: 20px 0;
+}
+.service-img{
+    width: 80vw;
+}
+.service-img img{
+    width: 100%;
+}
+.service-name{
+    font-family: 'EngraversGothic BT', sans-serif;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    color: var(--red);
+    font-weight: bold;
+    padding: 20px 0;
+    text-align: center;
+}
+.service-desc{
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
+    text-align: center;
+    padding: 20px;
+    color: var(--black);
+}
+@media screen and (min-width: 750px) {
+    .services-wrapper{
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        align-items: center;
+    }
+    .service,
+    .service-img{
+        width: 40vw;
+    }
+    .about,
+    .what-i-do,
+    .what-ive-done,
+    .hire-me{
+        padding: 50px;
+    }
+}
+@media screen and (min-width: 1200px) {
+    .services-wrapper{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+    }
+    .service,
+    .service-img{
+        width: 30vw;
+    }
+}
+.work-wrapper{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.work-title{
+    color: var(--white);
+}
+.project{
+    position: relative;
+    margin: 50px 0;
+}
+.project-img{
+    width: 80vw;
+}
+
+.project-img img{
+    width: 100%;
+}
+.project-title{
+    color: var(--white);
+    font-weight: bolder;
+    font-family: 'Patron - Personal Use', sans-serif;
+    font-size: clamp(1.4rem, 3vw, 2rem);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    flex-wrap: nowrap;
+    z-index: 1;
+}
+@media screen and (min-width: 768px) {
+    .work-wrapper{
+        display: flex;
+        flex-direction: column;
+    }
+    .project-img{
+        width: 40vw;
+        filter: grayscale(100%);
+    }.project-img:hover{
+        filter: grayscale(0);
+    }
+    #right{
+        margin-left:55%;
+    }
+    #left{
+        margin-right: 55%;
+    }
+    #right .project-title{
+        position: absolute;
+        bottom: 50%;
+        left: -35%;
+        transform: translateX(10%);
+    }
+    #left .project-title{
+        position: absolute;
+        bottom: 50%;
+        right: -70%;
+        transform: translateX(50%);
+    }
+}
+.hire-me{
+    display: flex;
+    flex-direction: column;
+    align-items:center;
+    text-align: center;
+    justify-content: center;
+}
+.contact-desc{
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(.8rem, 3vw, 1.5rem);
+}
+.buttons{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+}
+.button{
+    padding: 10px;
+    width: 40vw;
+    margin: 20px 0;
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    font-weight: bold;
+    cursor: pointer;
+}
+#email{
+    background: var(--red);
+    border: 2px solid var(--red);
+    color: var(--white);
+}
+#email:hover{
+    background: none;
+    border: 2px solid var(--black);
+    color: var(--black);
+}
+#call{
+    border: 2px solid var(--black);
+    color: var(--black);
+}
+#call:hover{
+    background: var(--red);
+    border: 2px solid var(--red);
+    color: var(--white);
+}
+@media screen and (min-width: 768px) {
+    .buttons{
+        flex-direction: row;
+    }
+    .button{
+        margin: 20px;
+        width: 20vw;
+    }
+}
+.footer-logo{
+    width: 5vw;
+    position: relative;
+    margin-left: 20px;
+    margin-bottom: 30px;
+}
+.footer-logo img{
+    width: 100%;
+}
+.footer-logo::after{
+    content: "";
+    width: 95vw;
+    height: 2px;
+    background-color:var(--black);
+    position: absolute;
+    top: 50%;
+    left: 5vw;
+    z-index: -1;
+}
+.copyright{
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(.5rem, 3vw, 1rem);
+    float: right;
+    margin-top: -30px;
+}
+.skills{
+    display: flex;
+    flex-direction: column;
+}
+.skills ul{
+    margin: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: black;
+    padding: 20px 0;
+}
+.skills ul li{
+    list-style: none;
+    font-family: 'Montserrat', sans-serif;
+    font-size: clamp(.5rem, 3vw, 1rem);
+    margin: 5px 0;
+    color: white;
+}
+.skill-title{
+    font-family: 'Patron - Personal Use', sans-serif;
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    color: grey;
+}
+@media screen and (min-width: 768px){
+    .skills{
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+    }
+    .skills ul{
+        margin: 10px;
+        padding: 20px 20px;
+        width: 30vw;
+        height: 500px;
+        text-align: center;
+    }
+    .skill-title{
+        margin-bottom: 50px;
+    }
+}
