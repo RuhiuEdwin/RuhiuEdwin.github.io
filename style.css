@@ -1,3 +1,11 @@
+@font-face {
+    font-family: EngraversGothic;
+    src: url(./Engravers-Gothic-BT-Font.ttf);
+  }
+  @font-face {
+    font-family: Patron;
+    src: url(./Patron-PersonalUse.ttf);
+  }
 *{
     margin: 0;
     padding: 0;
@@ -27,18 +35,18 @@ section{
     position: relative;
 }
 .name{
-    font-family: 'Patron - Personal Use', sans-serif;
+    font-family: 'Patron', sans-serif;
     font-size: clamp(2rem, 10vw, 8rem);
 }
 .title{
-    font-family: 'EngraversGothic BT', sans-serif;
+    font-family: 'EngraversGothic', sans-serif;
     font-size: clamp(.5rem, 3vw, 2rem);
 }
 .about-title,
 .work-title,
 .services-title,
 .contact-main{
-    font-family: 'Patron - Personal Use', sans-serif;
+    font-family: 'Patron', sans-serif;
     font-size: clamp(2rem, 10vw, 6rem);
     text-align: center;
 }
@@ -62,13 +70,14 @@ section{
     padding: 20px;
 }
 .main-desc{
-    font-family: 'EngraversGothic BT', sans-serif;
+    font-family: 'EngraversGothic', sans-serif;
     font-size: clamp(1.5rem, 2vw, 2rem);
 }
 .secondary,
 .tertiary{
     font-family: 'Montserrat', sans-serif;
-    font-size: clamp(1rem, 2vw, 1.5rem);
+    font-weight: lighter;
+    font-size: clamp(1rem, 2vw, 1.3rem);
     margin: 20px 0;
 }
 @media screen and (min-width: 800px) {
@@ -160,7 +169,7 @@ section{
     width: 100%;
 }
 .service-name{
-    font-family: 'EngraversGothic BT', sans-serif;
+    font-family: 'EngraversGothic', sans-serif;
     font-size: clamp(1.5rem, 3vw, 2rem);
     color: var(--red);
     font-weight: bold;
@@ -224,7 +233,7 @@ section{
 .project-title{
     color: var(--white);
     font-weight: bolder;
-    font-family: 'Patron - Personal Use', sans-serif;
+    font-family: 'Patron', sans-serif;
     font-size: clamp(1.4rem, 3vw, 2rem);
     position: absolute;
     bottom: 0;
@@ -363,7 +372,7 @@ section{
     color: white;
 }
 .skill-title{
-    font-family: 'Patron - Personal Use', sans-serif;
+    font-family: 'Patron', sans-serif;
     font-size: clamp(1.5rem, 3vw, 2rem);
     color: grey;
 }
