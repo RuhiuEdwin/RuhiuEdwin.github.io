@@ -57,13 +57,26 @@ section{
     align-items: center;
 }
 .about-img{
+    margin-top: 50px;
     width: 250px;
     height: 250px;
     border-radius: 50%;
-    background: url(./images/me.png);
-    background-position: center;
+    /* background: black;
+    position: relative; */
+    background: url(./images/me.jpg);
+    background-position: top center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+.profile-img{
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    width: 100%;
+    height: auto;
+    border-radius:0 0 50% 50%;
 }
 .about-desc{
     text-align: center;
@@ -94,6 +107,10 @@ section{
     .about-img{
         width: 600px;
         height: 600px;
+    }
+    .profile-img{
+        width: 100%;
+        height: auto;
     }
     .cursor-dot,
 .cursor-dot-outline {
@@ -135,7 +152,7 @@ section{
 .graphic img{
     width:100%;
     overflow: hidden;
-    margin-left: -100px;
+    margin-left: -50px;
 }
 @media screen and (min-width: 768px) {
     .graphic img{
@@ -157,8 +174,8 @@ section{
     align-items: center;
     justify-content: center;
     background-color: var(--white);
-    border-radius: 5px;
-    width: 80vw;
+    border-radius: 10px;
+    width: 90vw;
     height: 80vh;
     margin: 20px 0;
 }
@@ -356,13 +373,14 @@ section{
     flex-direction: column;
 }
 .skills ul{
-    margin: 50px;
+    margin: 20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     background: black;
     padding: 20px 0;
+    border-radius: 10px;
 }
 .skills ul li{
     list-style: none;
